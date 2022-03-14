@@ -1,4 +1,4 @@
-# Express + Prisma Template 🌚
+# Express API + Prisma Template 🌚
 An Express api template using Typescript and Prisma with Postgresql
 
 ## Requirements
