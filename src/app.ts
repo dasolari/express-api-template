@@ -1,4 +1,11 @@
-import express, { json, urlencoded } from 'express';
+import express, {
+  json,
+  urlencoded,
+  Application,
+  Request,
+  Response,
+  NextFunction,
+} from 'express';
 import morgan from 'morgan';
 import routes from './handlers/routes';
 
@@ -6,7 +13,7 @@ import routes from './handlers/routes';
   App Configuration
 */
 
-const app = express();
+const app: Application = express();
 
 /*
   Middlewares
@@ -16,7 +23,7 @@ const app = express();
 app.use(morgan('combined'));
 
 // Expose running mode in res.locals
-app.use((_req, res, next) => {
+app.use((_req: Request, res: Response, next: NextFunction) => {
   res.locals.env = app.get('env');
   next();
 });

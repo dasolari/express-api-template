@@ -9,7 +9,9 @@ const seeder = async () => {
 
 seeder()
   .catch((error) => {
-    console.error(`There was an error while seeding the database: ${error}`);
+    console.error(
+      `There was an error while seeding the database: ${error}`,
+    );
     process.exit(1);
   })
   .finally(async () => {

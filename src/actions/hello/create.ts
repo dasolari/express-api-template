@@ -5,7 +5,7 @@ const createHello = async (args: CreateHelloArgs) => {
   const hello = await prismaClient.hello.create({
     data: {
       ...args,
-    }
+    },
   });
   return hello;
 };
