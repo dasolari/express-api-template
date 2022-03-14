@@ -25,10 +25,10 @@ An Express api template using Typescript and Prisma with Postgresql
 3. Add a model to the schema in `src/prisma/schema.prisma`:
     ```prisma
     model Hello {
-      id        Int      @id @default(autoincrement())
+      id        String   @id @default(uuid()) @db.Uuid
       name      String   @db.VarChar
-      createdAt DateTime @db.Timestamp(6) @default(now())
-      updatedAt DateTime @db.Timestamp(6) @updatedAt
+      createdAt DateTime @default(now()) @db.Timestamp(6)
+      updatedAt DateTime @updatedAt @db.Timestamp(6)
     }
     ```
     All models have to be written in the same file (`schema.prisma`), so to keep a sort of order in your models, it's recommended that you write them in alphabetical order. To format your `schema.prisma`, press `Opt` + `Shift` + `F` on Mac and `Alt` + `Shift` + `F` on Windows. Then, run this command to save the Prisma types in your `node_modules` folder:
