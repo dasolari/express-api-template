@@ -11,6 +11,7 @@
     "dev": "nodemon index.ts",
     "lint": "eslint ./src index.ts",
     "lint-fix": "eslint --fix ./src index.ts",
+    "postinstall": "tsc",
     "prisma:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:reset": "npx prisma migrate reset",
